@@ -1,14 +1,14 @@
 # Coding challenge for [Creating an Execution-Driven Version of Olympia, the Performance Model of example RISC-V superscalar](https://mentorship.lfx.linuxfoundation.org/project/1dbecd05-87ae-476f-9d0a-1985cc001ec6)
 
 ## Build instructions
-```console
+```bash
 mkdir build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make
 ```
 
 ## Usage
-```console
+```bash
 ./describe_object object [args...]
 ```
 

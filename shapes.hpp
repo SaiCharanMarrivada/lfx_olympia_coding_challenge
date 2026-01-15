@@ -16,6 +16,8 @@ public:
 
 class Registry {
 public:
+    // delete all move/copy constructor and move-assignment
+    // and copy-assignment operators to avoid accidental copies
     Registry(const Registry &other) = delete;
     Registry(Registry &&other) = delete;
     Registry &operator=(const Registry &other) = delete;
@@ -37,10 +39,12 @@ public:
         return nullptr;
     }
 private:
+    // to prevent constructing this class
     Registry() = default;
     std::unordered_map<std::string, std::unique_ptr<Object>> map;
 };
 
+// Register objects using static initialization
 #define REGISTER(name, object) \
     static struct Register##object { \
         Register##object() { \
