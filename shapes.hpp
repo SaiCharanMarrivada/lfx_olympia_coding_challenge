@@ -5,6 +5,11 @@
 #include <memory>
 #include <string>
 
+#define assert(condition) \
+    if (!(condition)) { \
+        throw std::runtime_error("Assertion \"" #condition "\" failed"); \
+    }
+
 class Object {
 public:
     virtual void parse(const std::vector<float> &args) = 0;
@@ -65,6 +70,7 @@ public:
             describe();
         } else if (args.size() == 1) {
            length = args[0];
+           assert(length > 0.0f);
            std::cout << "perimeter: " << perimeter() << " area: " << area() << '\n';
         } else {
             throw std::runtime_error("Usage: describe_object square [length]");
@@ -94,6 +100,7 @@ public:
             describe();
         } else if (args.size() == 1) {
             radius = args[0];
+            assert(radius > 0.0f);
             std::cout << "perimeter: " << perimeter() << " area: " << area() << '\n';
         } else {
             throw std::runtime_error("Usage: describe_object circle [radius]");
@@ -128,6 +135,7 @@ public:
         } else if (args.size() == 2) {
             height = args[0];
             width = args[1];
+            assert(height > 0.0f && width > 0.0f);
             std::cout << "perimeter: " << perimeter() << " area: " << area() << '\n';
         } else {
             throw std::runtime_error("Usage: describe_object rect [height width]");

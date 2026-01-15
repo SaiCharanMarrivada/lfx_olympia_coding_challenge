@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
             args.push_back(std::stof(argv[i]));
         }
         object->parse(args);
+    } catch (std::invalid_argument &e) {
+        std::cout << "Expected float for arguments to " << argv[1];
     } catch (std::exception &e) {
         std::cout << e.what() << '\n';
     }
