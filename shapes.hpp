@@ -114,8 +114,6 @@ public:
     float perimeter() override {
         return 2 * std::numbers::pi_v<float> * radius;
     }
-
-    ~Circle() = default;
 };
 REGISTER("circle", Circle);
 
