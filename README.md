@@ -27,7 +27,7 @@ $ ./describe_object square
 A square has four sides that are of equal length
 
 # when called with wrong no.of arguments
-$ ./describe object square 2 3
+$ ./describe_object square 2 3
 Usage: describe_object square [length]
 
 # prints perimeter and area when called with right no.of arguments
